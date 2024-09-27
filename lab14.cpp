@@ -45,17 +45,41 @@ int main()
 		return -1;
 	}
 
-	//populate colors
+	//populate color 1
 	int num;
-	while (!in.eof())
-	{
-		Color temp;
-		in >> num;
+	in >> num;
+	col1.setRed(num);
+	in >> num;
+	col1.setGreen(num);
+	in >> num;
+	col1.setBlue(num);
 
-	}
+	//populate color 2
+	in >> num;
+	col2.setRed(num);
+	in >> num;
+	col2.setGreen(num);
+	in >> num;
+	col2.setBlue(num);
+
+	//populate color 3
+	in >> num;
+	col3.setRed(num);
+	in >> num;
+	col3.setGreen(num);
+	in >> num;
+	col3.setBlue(num);
 
 	//close input file
 	in.close();
+
+	//display colors
+	col1.print();
+	cout << endl;
+	col2.print();
+	cout << endl;
+	col3.print();
+	cout << endl;
 
 	return 0;
 }
