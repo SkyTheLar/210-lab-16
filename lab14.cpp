@@ -7,6 +7,7 @@ This program demonstrates a RGB color class
 **********************************/
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class Color{
@@ -33,13 +34,28 @@ public:
 
 int main()
 {
-	Color col;
+	//declare color variables
+	Color col1, col2, col3;
 
-	col.setRed(100);
-	col.setGreen(200);
-	col.setBlue(150);
+	//open input file
+	ifstream in;
+	in.open("colors.txt");
+	if (!in){
+		cout << "File open error.\n";
+		return -1;
+	}
 
-	col.print();
+	//populate colors
+	int num;
+	while (!in.eof())
+	{
+		Color temp;
+		in >> num;
+
+	}
+
+	//close input file
+	in.close();
 
 	return 0;
 }
