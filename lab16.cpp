@@ -53,6 +53,8 @@ int main()
 	cout << endl;
 	col3.print();
 	cout << endl;
+	col4.print();
+	cout << endl;
 
 	return 0;
 }
