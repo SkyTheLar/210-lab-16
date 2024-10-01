@@ -1,8 +1,8 @@
 /*********************************
 
-COMSC 210 | Lab 14 | Skylar Robinson
+COMSC 210 | Lab 16 | Skylar Robinson
 
-This program demonstrates a RGB color class
+This program demonstrates a RGB color class with constructors
 
 **********************************/
 
@@ -14,6 +14,12 @@ class Color{
 private:
 	int red, green, blue;
 public:
+	//constructors
+	Color() { red = 0; green = 0; blue = 0; }
+	Color(int r) { red = r; green = 0, blue = 0; }
+	Color(int r, int g) { red = r; green = g; blue = 0; }
+	Color(int r, int g, int b) { red = r; green = g; blue = b; }
+
 	//setters
 	void setRed(int r)   { red = r; }
 	void setGreen(int g) { green = g; }
@@ -34,44 +40,11 @@ public:
 
 int main()
 {
-	//declare color variables
-	Color col1, col2, col3;
-
-	//open input file
-	ifstream in;
-	in.open("colors.txt");
-	if (!in){
-		cout << "File open error.\n";
-		return -1;
-	}
-
-	//populate color 1
-	int num;
-	in >> num;
-	col1.setRed(num);
-	in >> num;
-	col1.setGreen(num);
-	in >> num;
-	col1.setBlue(num);
-
-	//populate color 2
-	in >> num;
-	col2.setRed(num);
-	in >> num;
-	col2.setGreen(num);
-	in >> num;
-	col2.setBlue(num);
-
-	//populate color 3
-	in >> num;
-	col3.setRed(num);
-	in >> num;
-	col3.setGreen(num);
-	in >> num;
-	col3.setBlue(num);
-
-	//close input file
-	in.close();
+	//declare color variables with each constructor
+	Color col1;
+	Color col2(150);
+	Color col3(255, 100);
+	Color col4(20, 175, 210);
 
 	//display colors
 	col1.print();
